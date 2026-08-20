@@ -10,7 +10,7 @@ spec:
     - name: httpd-cont
       image: httpd
       ports:
-        - containerPorts: 80
+        - containerPort: 80
 ---
 #Service
 apiVersion: v1
