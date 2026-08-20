@@ -1,0 +1,13 @@
+apiVersino: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+  labels:
+    env: dev
+spec:
+  containers:
+    - name: httpd-cont
+      image: httd:latest
+      ports:
+        - name: httpd-port
+          containerPort: 80
