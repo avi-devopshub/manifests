@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-pod
+  labels:
+    env: dev
+spec:
+  containers:
+    - name: ubuntu-cont
+      image: ubuntu:latest
+      ports:
+        - name: ubuntu-port
+          command: ["/bin/bash"]
+          args: ["-c", "sleep infinity"]
