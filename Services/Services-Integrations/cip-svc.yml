@@ -1,0 +1,30 @@
+#pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    env: prod
+spec:
+  containers:
+    - name: nginx-cont
+      image: nginx
+      ports:
+        - name: nginx-port 
+          containerPort: 80
+---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: CluserIP-svc
+  labels:
+    env: prod
+spec:
+  type: ClusterIP
+  selector:
+    env: prod
+  ports:
+    - name: svc-port
+      port: 80
+      targetPort: 80
