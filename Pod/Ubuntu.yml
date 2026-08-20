@@ -8,7 +8,5 @@ spec:
   containers:
     - name: ubuntu-cont
       image: ubuntu:latest
-      ports:
-        - name: ubuntu-port
-          command: ["/bin/bash"]
-          args: ["-c", "sleep infinity"]
+      command: ["/bin/bash"]
+      args: ["-c", "sleep infinity"]
