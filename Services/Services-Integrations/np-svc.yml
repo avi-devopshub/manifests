@@ -1,0 +1,28 @@
+#Pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+  labels:
+    env: test
+spec:
+  containers:
+    - name: httpd
+      ports:
+        - containerPorts: 80
+---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: np-svc
+  labels:
+    env: test
+spec:
+  type: NodePort
+  selector:
+    env: test
+  ports:
+    - name: svc-port
+      port: 80
+      targetPort: 80
