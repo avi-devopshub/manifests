@@ -18,13 +18,13 @@ spec:
         - name: my-container
           image: mysql:8
           ports:
-            - containerPort: 80
+            - containerPort: 3306
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: "123456"
             - name: MYSQL_DATABASE
               value: "test"
             - name:  MYSQL_USER
-              value: "avinash
+              value: "avinash"
             - name: MYSQL__PASWORD
               value: "123456"
