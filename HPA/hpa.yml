@@ -11,4 +11,12 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: dev-deploy
-  
+  minReplicas: 2
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilizaTION: 30
