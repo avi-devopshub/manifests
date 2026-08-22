@@ -1,0 +1,23 @@
+#requiredDuringSchedulingIgnoredDuringExecution
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+  labels:
+    env: dev
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: env
+                operator: In
+                values:
+                  - dev
+  containers:
+    - name: nginx-cont
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+            

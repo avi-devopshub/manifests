@@ -1,0 +1,33 @@
+#preferredDuringSchedulingIgnoredDuringExecution
+apiVersion: v1
+kind: Pod
+metadata:
+  name: newpod
+  labels:
+    env: dev
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 1
+          preference:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - web
+        - weight: 2 #The pod will get scheduled on the node having the label app=backend becaue it has more weight 
+          preference: 
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - backend
+
+  containers:
+    - name: nginx-cont
+      image: nginx:latest
+      ports:
+        - name: nginx-port
+          containerPort: 80
+        
