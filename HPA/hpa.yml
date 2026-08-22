@@ -19,4 +19,4 @@ spec:
         name: cpu
         target:
           type: Utilization
-          averageUtilizaTION: 30
+          averageUtilization: 30
