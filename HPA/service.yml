@@ -1,0 +1,19 @@
+#Service v1
+apiVersion: v1
+kind: Service
+metadata:
+  name: Service
+  labels:
+    env: dev
+  namespace: dev
+spec:
+  selector:
+    env: dev
+  type: NodePort
+  ports:
+    - name: svc-port
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30000
+  
