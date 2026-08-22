@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dev-ervice
+  name: dev-service
   labels:
     env: dev
   namespace: dev
@@ -16,4 +16,3 @@ spec:
       port: 80
       targetPort: 80
       nodePort: 30000
-  
