@@ -29,7 +29,7 @@ spec:
           resources:
             requests:
               cpu: "100m"
-              memory: "64Gi"
+              memory: "64Mi"
             limits:
               cpu: "200m"
-              memory: "128Gi"
+              memory: "128Mi"
