@@ -1,0 +1,22 @@
+#laptop-HPA
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: laptop-hpa
+  labels:
+    env: laptop
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v2
+    kind: Deployment
+    name: laptop-deployment
+  minReplicas: 2
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: CPU
+        target:
+          type: Utilization
+          averageUtilization: 50
+    

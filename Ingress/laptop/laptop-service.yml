@@ -1,0 +1,14 @@
+#laptop-Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: laptop-svc
+  labels:
+    app: laptop
+spec:
+  selector:
+    env: laptop
+  type: ClusterIP
+  protocol: TCP
+  port: 80
+  targetPort: 80

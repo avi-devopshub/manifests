@@ -1,0 +1,14 @@
+#Home-Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-svc
+  labels:
+    app: home
+spec:
+  selector:
+    env: home
+  type: ClusterIP
+  protocol: TCP
+  port: 80
+  targetPort: 80

@@ -1,0 +1,22 @@
+#Home-HPA
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: home-hpa
+  labels:
+    env: home
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v2
+    kind: Deployment
+    name: home-deployment
+  minReplicas: 2
+  maxReplicas: 4
+  metrics:
+    - type: Resource
+      resource:
+        name: CPU
+        target:
+          type: Utilization
+          averageUtilization: 50
+    

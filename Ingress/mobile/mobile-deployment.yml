@@ -1,0 +1,36 @@
+#mobile-Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobile-deployment
+  labels:
+    app: mobile
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mobile
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: mobile
+    spec:
+      containers:
+        - name: tomcat-cont
+          image: tomcat:latest
+          ports:
+            - name: tomcat-port
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Gi"
+            limits:
+              cpu: "200m"
+              memory: "128Gi'
+              
