@@ -9,6 +9,8 @@ spec:
   selector:
     env: home
   type: ClusterIP
-  protocol: TCP
-  port: 80
-  targetPort: 80
+  ports:
+    - name: home-svc-port
+      protocol: TCP
+      port: 80
+      targetPort: 80
