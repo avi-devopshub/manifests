@@ -1,0 +1,34 @@
+#Ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name : nginx-ingress
+  labels:
+    env: dev
+spec:
+  ingressClassName: nginx
+  rules:
+    - host:  ab2ef65ada3114d5c8c04c2ee556bb9b-cc4d78aa39e65534.elb.ap-south-1.amazonaws.com
+      http:
+        paths:
+          - path: /
+            pathType: prefix
+            backend:
+              service:
+                name: home-svc
+                port:
+                  number: 80
+          - path: /laptop
+            pathType: prefix
+            backend:
+              service:
+                name: laptop-svc
+                port:
+                  number: 80
+          - path: /mobile
+            pathType: prefix
+            backend:
+              service:
+                name: mobile-svc
+                port:
+                  number: 8080
