@@ -12,21 +12,21 @@ spec:
       http:
         paths:
           - path: /
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: home-svc
                 port:
                   number: 80
           - path: /laptop
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: laptop-svc
                 port:
                   number: 80
           - path: /mobile
-            pathType: prefix
+            pathType: Prefix
             backend:
               service:
                 name: mobile-svc
