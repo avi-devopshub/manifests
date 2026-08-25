@@ -32,4 +32,4 @@ spec:
               memory: "64Gi"
             limits:
               cpu: "200m"
-              memory: "128Gi'
+              memory: "128Gi"
